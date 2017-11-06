@@ -13,8 +13,33 @@
 
 #include <iostream>
 using namespace std;
-//add your own exception class here 
-//add functions code here
+
+float square_area(float a){
+    try{if(a < 0){
+        throw string("Type a number greater than zero my guy");
+    }
+    if(a>0){
+        return a*a;
+    }
+    
+
+    }catch (string &exc){
+        cout<< "Your input is not valid. The area can't be negative." << endl;
+}
+}
+float rectangle_area(float a, float b){
+    try{
+        if((a*b) < 0){
+            throw string("Oops no zeros allowed");
+        }
+        if((a*b) > 0){
+            return a*b;
+        }
+    }
+    catch(string &exc){
+       cout<< "Your input is not valid. The area can't be negative." << endl;
+    }
+}
 int main(void) {
     float a, b, r; 
     cin >> a;
@@ -25,6 +50,9 @@ int main(void) {
         float rrectangle = rectangle_area(a,b);
         cout << rsquare << endl << rrectangle << endl;
     }
-//add a suitable catch block here
-return 0; }
+    catch(string &exc){
+        cout<< "Your input is not valid. The area can't be negative." << endl;
+    }
+return 0; 
+}
 
