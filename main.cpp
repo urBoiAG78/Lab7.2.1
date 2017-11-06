@@ -15,7 +15,8 @@
 using namespace std;
 
 float square_area(float a){
-    try{if(a < 0){
+    try{
+        if(a < 0){
         throw string("Type a number greater than zero my guy");
     }
     if(a>0){
@@ -24,7 +25,7 @@ float square_area(float a){
     
 
     }catch (string &exc){
-        cout<< "Your input is not valid. The area can't be negative." << endl;
+        throw string("Ripperoni");
 }
 }
 float rectangle_area(float a, float b){
@@ -37,7 +38,7 @@ float rectangle_area(float a, float b){
         }
     }
     catch(string &exc){
-       cout<< "Your input is not valid. The area can't be negative." << endl;
+        throw string("Ripperoni");
     }
 }
 int main(void) {
